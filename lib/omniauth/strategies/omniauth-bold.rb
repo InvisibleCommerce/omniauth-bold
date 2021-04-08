@@ -12,7 +12,7 @@ module OmniAuth
       }
 
       def callback_url
-        options[:callback_url] || super
+        options[:callback_url] || (full_host + script_name + callback_path)
       end
     end
   end
